@@ -36,13 +36,13 @@ while True:
 
         while True:
             estado_civil = input("Ingrese su estado civil (C=Casado, S=Soltero, V=Viudo): ")
-            if estado_civil == "C" or "c":
+            if estado_civil == "C" or estado_civil=="c":
                 estado_civil = "casado"
                 break
-            elif estado_civil == "S" or "s":
+            elif estado_civil == "S" or estado_civil=="s":
                 estado_civil = "soltero"
                 break
-            elif estado_civil == "V" or "v":
+            elif estado_civil == "V" or estado_civil== "v":
                 estado_civil = "viudo"
                 break
             else:
@@ -50,10 +50,10 @@ while True:
 
         while True:
             genero = input("Ingrese su género (M=Masculino, F=Femenino): ")
-            if genero == "M" or "m":
+            if genero == "M" or genero=="m":
                 genero = "masculino"
                 break
-            elif genero == "F" or "f":
+            elif genero == "F" or genero=="f":
                 genero = "femenino"
                 break
             else:
