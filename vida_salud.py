@@ -12,5 +12,65 @@ while True:
     try:
         opcion = int(input("Seleccione una de las opciones anteriores: "))
     except ValueError:
-        print("Debe ingresar un número válido.(version 1.0)")
+        print("Debe ingresar un número válido.")
         continue
+
+    if opcion == 1:
+        rut = input("Ingrese el RUT (con guion): ")
+        if "-" not in rut:
+            print("El RUT debe contener un guion ('-').")
+            continue
+
+        nombre = input("Ingrese su nombre: ")
+        apellido_P = input("Ingrese su apellido paterno: ")
+
+        while True:
+            try:
+                edad = int(input("Ingrese su edad: "))
+                if edad >= 18:
+                    break
+                else:
+                    print("Debe ser mayor de edad.")
+            except ValueError:
+                print("Edad inválida, ingrese un número.")
+
+        while True:
+            estado_civil = input("Ingrese su estado civil (C=Casado, S=Soltero, V=Viudo): ")
+            if estado_civil == "C" or estado_civil=="c":
+                estado_civil = "casado"
+                break
+            elif estado_civil == "S" or estado_civil=="s":
+                estado_civil = "soltero"
+                break
+            elif estado_civil == "V" or estado_civil== "v":
+                estado_civil = "viudo"
+                break
+            else:
+                print("Estado civil no válido.")
+
+        while True:
+            genero = input("Ingrese su género (M=Masculino, F=Femenino): ")
+            if genero == "M" or genero=="m":
+                genero = "masculino"
+                break
+            elif genero == "F" or genero=="f":
+                genero = "femenino"
+                break
+            else:
+                print("Género no válido.")
+
+        
+        fechaactual = input("Ingrese la fecha actual [dd/mm/aaaa]: ")
+            
+
+        datos[rut] = {
+            "nombre": nombre,
+            "apellido_P": apellido_P,
+            "edad": edad,
+            "estado_civil": estado_civil,
+            "genero": genero,
+            "fecha_registro": fechaactual
+        }
+
+        print("Datos grabados correctamente.\n (version 1.1)")
+
